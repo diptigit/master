@@ -1,0 +1,77 @@
+Post http://mytest.com/login
+ 200 OK
+Content-Type:application/vnd.api+json
+
+
+Request:
+
+{
+    "username": "test",
+    "password": "test"
+}
+
+Response:
+
+
+{
+    "status": "Success",
+    "code": "200",
+    "message": "User found successfuly",
+    "data": {
+        "user-info": {
+            "name": "test",
+            "email": "test@gmail.com",
+            "photo": "image url",
+            "hobbies": "user hobbies"
+        }
+    }
+}
+
+
+Test Case Sceneerio:
+
+1. username and password should not be blank request.
+2. Status should be success.
+3. code should be 200.
+4.Message should be user found successfuly.
+5. Data should not be blank.
+
+
+
+Request:
+
+{
+    "username": "test1",
+    "password": "123"
+}
+
+Response:
+
+
+{
+    "status": "Failure",
+    "code": "400",
+    "message": "Bad Request",
+    "data": {}
+        
+  }
+  
+Request:
+
+{
+    "username": "test1",
+    "password": "123"
+}
+
+Response:
+
+
+{
+    "status": "Failure",
+    "code": "404",
+    "message": "user not found",
+    "data": {}
+        
+  }
+  
+

@@ -1,0 +1,44 @@
+GET http://mytest.com/user-info/userid
+ 200 OK
+Content-Type:application/vnd.api+json
+
+Request: http://mytest.com/user-info/1
+Response:
+
+{
+    "status": "Success",
+    "code": "200",
+    "message": "User found successfuly",
+    "data": {
+        "user-info": {
+            "name": "test",
+            "email": "test@gmail.com",
+            "photo": "image url",
+            "hobbies": "user hobbies"
+        }
+    }
+}
+
+*userid 11 is not exist in database
+Request: http://mytest.com/user-info/11
+Response:
+
+{
+    "status": "failure",
+    "code": "404",
+    "message": "User not found",
+    "data": {}
+        
+}
+
+*this routes is not exist
+Request: http://mytest.com/user-infos/1
+Response:
+{
+    "status": "Failure",
+    "code": "400",
+    "message": "Bad Request",
+    "data": {}
+        
+  }
+  
